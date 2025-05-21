@@ -23,7 +23,6 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/phosphor-icons@1.4.2/src/css/icons.css" />
     <!-- Main CSS -->
     <link rel="stylesheet" href="style.css" />
-    <link rel="icon" href="favicon.ico" />
 
   
     <style>
@@ -50,18 +49,34 @@
     </div>
 
     <!-- =================== HEADER =================== -->
-    <header>
-      <nav aria-label="Navegación principal">
-        <ul>
-          <li><a href="#inicio">Inicio</a></li>
-          <li><a href="#valores">Nuestros valores</a></li>
-          <li><a href="#talleres">Talleres</a></li>
-          <li><a href="#galeria">Galería</a></li>
-          <li><a href="#eventos">Eventos</a></li>
-          <li><a href="#contacto">Contacto</a></li>
-        </ul>
-      </nav>
-    </header>
+  <header>
+    <nav aria-label="Navegación principal" class="nav--principal">
+      <!-- Botón hamburger -->
+      <button 
+        class="nav-toggle" 
+        aria-label="Abrir menú" 
+        aria-expanded="false"
+      >
+        <!-- Aquí un SVG o una imagen -->
+        <svg width="24" height="24" viewBox="0 0 24 24">
+          <path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2"/>
+        </svg>
+      </button>
+
+      <ul class="nav-list">
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#talleres">Talleres</a></li>
+        <li><a href="#valores">Nuestros valores</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+      <div class="marca">
+        <span class="amanita">Amanita </span>
+        <span class="estudio">Estudio</span>
+      </div>
+
+    </nav>
+  </header>
+
 
     <!-- =================== MAIN =================== -->
     <main>
@@ -76,7 +91,7 @@
           </div>
 
           <div class="hero-text">
-            <h1>
+            <h1 class="marca">
               <span class="estudio">Estudio</span>
               <span class="amanita">Amanita</span>
             </h1>
@@ -95,84 +110,39 @@
 
       <!-- ---------- Inicio ---------- -->
       <section id="inicio" aria-labelledby="titulo-inicio">
-        <div class="inicio-imagen">
-          <img
-            src="images/taller01.jpeg"
-            alt="Espacio interior cálido con plantas"
-          />
-        </div>
+        <div class="inicio-box">
+          <div class="inicio-imagen">
+            <img
+              src="images/taller01.jpeg"
+              alt="Espacio interior cálido con plantas"
+            />
+          </div>
 
-        <div class="inicio-text">
-          <h2 id="titulo-inicio">¡Hola!</h2>
-          <p>
-            <span class="span-primary">Amanita Estudio </span> es nuestro
-            espacio creativo ubicado en
-            <span class="span-secondary">Núñez</span>.
-          </p>
-          <p>
-            Amanita es un hongo que crece en simbiosis con los árboles, formando
-            una red de comunicación y apoyo.
-          </p>
-          <p>
-            Así como el hongo, nuestro espacio busca crear conexiones entre las
-            personas, fomentando la creatividad y el crecimiento personal.
-          </p>
-          <p>Conocé tu refugio artístico.</p>
-          <p>
-            Acá la creatividad brota naturalmente. Es tu lugar para conectar con
-            tu mundo interno, explorar nuevas formas de expresión y compartir
-            con una comunidad que acompaña.
-          </p>
-        </div>
-      </section>
-
-      <!-- ---------- Valores ---------- -->
-      <section id="valores" aria-labelledby="titulo-valores">
-        <h2 id="titulo-valores">Nuestros valores</h2>
-
-        <div class="valores-cards">
-          <div>
-            <h3>Libertad creativa</h3>
+          <div class="inicio-text">
+            <h2 id="titulo-inicio">¡Hola!</h2>
             <p>
-              Espacio para ampliar horizontes, conectar con tu voz propia y
-              dejar que la creatividad brote.
+              <span class="span-primary">Amanita Estudio </span> es nuestro
+              espacio creativo ubicado en
+              <span class="span-secondary">Núñez</span>.
             </p>
-            <img src="images/flor.png" alt="ilustracion flores" />
-          </div>
-
-          <div>
-            <h3>Calidez</h3>
             <p>
-              Detalles que hacen la diferencia: aromas suaves, té compartido,
-              mesas comunitarias.
+              Amanita es un hongo que crece en simbiosis con los árboles, formando
+              una red de comunicación y apoyo.
             </p>
-            <img src="images/corazon.png" alt="ilustracion corazon" />
-          </div>
-
-          <div>
-            <h3>Comunidad real</h3>
-            <p>Acompañamiento mutuo, sin competencia. Crecemos juntxs.</p>
-            <img src="images/flor.png" alt="ilustracion flores" />
-          </div>
-
-          <div>
-            <h3>Exploración personal</h3>
             <p>
-              Talleres como herramientas de introspección, juego y
-              descubrimiento.
+              Así como el hongo, nuestro espacio busca crear conexiones entre las
+              personas, fomentando la creatividad y el crecimiento personal.
             </p>
-            <img src="images/corazon.png" alt="ilustracion corazon" />
-          </div>
-
-          <div>
-            <h3>Para todas las edades</h3>
-            <p>Todas las etapas de la vida tienen un lugar acá.</p>
-            <img src="images/flor.png" alt="ilustracion flores" />
+            <p>Conocé tu refugio artístico.</p>
+            <p>
+              Acá la creatividad brota naturalmente. Es tu lugar para conectar con
+              tu mundo interno, explorar nuevas formas de expresión y compartir
+              con una comunidad que acompaña.
+            </p>
           </div>
         </div>
       </section>
 
- 
       <!-- ---------- Talleres ---------- -->
       <section id="talleres" aria-labelledby="titulo-talleres">
       <h2 id="titulo-talleres">Talleres creativos y experienciales</h2>
@@ -251,6 +221,51 @@
         
       </div>
     </section>
+      <!-- ---------- Valores ---------- -->
+      <section id="valores" aria-labelledby="titulo-valores">
+        <h2 id="titulo-valores">Nuestros valores</h2>
+
+        <div class="valores-cards">
+          <div>
+            <h3>Libertad creativa</h3>
+            <p>
+              Espacio para ampliar horizontes, conectar con tu voz propia y
+              dejar que la creatividad brote.
+            </p>
+            <img src="images/flor.png" alt="ilustracion flores" />
+          </div>
+
+          <div>
+            <h3>Calidez</h3>
+            <p>
+              Detalles que hacen la diferencia: aromas suaves, té compartido,
+              mesas comunitarias.
+            </p>
+            <img src="images/corazon.png" alt="ilustracion corazon" />
+          </div>
+
+          <div>
+            <h3>Comunidad real</h3>
+            <p>Acompañamiento mutuo, sin competencia. Crecemos juntxs.</p>
+            <img src="images/flor.png" alt="ilustracion flores" />
+          </div>
+
+          <div>
+            <h3>Exploración personal</h3>
+            <p>
+              Talleres como herramientas de introspección, juego y
+              descubrimiento.
+            </p>
+            <img src="images/corazon.png" alt="ilustracion corazon" />
+          </div>
+
+          <div>
+            <h3>Para todas las edades</h3>
+            <p>Todas las etapas de la vida tienen un lugar acá.</p>
+            <img src="images/flor.png" alt="ilustracion flores" />
+          </div>
+        </div>
+      </section>
 
       <!-- ---------- Contacto ---------- -->
       <section id="contacto" aria-labelledby="titulo-contacto">
@@ -263,8 +278,8 @@
 
 
             <div>
-              <label>Nombre</label>
-              <input type="text" id="nombre" name="nombre" required />
+              <label>Nombre y apellido</label>
+              <input type="text" id="nombre" name="nombre" placeholder="Nombre y apellido" required />
             </div>
 
             <div style="display:none;">
@@ -274,12 +289,27 @@
 
             <div>
               <label>Mail</label>
-              <input type="email" id="email" name="email" required />
+              <input type="email" id="email" name="email" placeholder="Mail" required />
             </div>
 
             <div>
+              <label for="celular">Celular</label>
+              <input 
+                type="tel" 
+                id="celular" 
+                name="celular" 
+                placeholder="Celular" 
+                required 
+                pattern="[0-9]*" 
+                inputmode="numeric"
+              />
+            </div>
+            <div>
+              
               <label for="taller">Taller de interés:</label>
-              <select id="taller" name="taller">
+              <select id="taller" name="taller" >
+                <option value="" disabled selected hidden>Taller de interés</option>
+
                 <option value="arte-ninos">Arte para infancias</option>
                 <option value="arte-vino">Arte y vino</option>
                 <option value="arte-merienda">Arte y merienda</option>
@@ -289,8 +319,8 @@
             </div>
 
             <div>
-              <label>Dejá tu mensaje</label>
-              <textarea id="mensaje" name="mensaje"></textarea>
+              <label>Dejanos tu mensaje</label>
+              <textarea id="mensaje" name="mensaje" placeholder="Dejanos tu mensaje"></textarea>
             </div>
 
             <div>
@@ -307,7 +337,7 @@
               type="hidden"
               name="_subject"
               value="Consulta desde Amanita Estudio"
-            />
+            />  
             <input
               type="hidden"
               name="_next"
@@ -361,14 +391,9 @@
 
             <div>
               <a href="https://www.instagram.com/tittas_cakes/" target="_blank">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="icono--ig"
-                  viewBox="0 0 16 16"
-                >
-                  <path
-                    d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"
-                  />
+                <svg xmlns="http://www.w3.org/2000/svg"  fill="currentColor" class="bi bi-geo-alt" viewBox="0 0 16 16">
+                  <path d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A32 32 0 0 1 8 14.58a32 32 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10"/>
+                  <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4m0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
                 </svg>
                 <p>Jaramillo 2152, Núñez</p>
 
@@ -377,15 +402,10 @@
 
             <div>
               <a href="https://www.instagram.com/tittas_cakes/" target="_blank">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="icono--ig"
-                  viewBox="0 0 16 16"
-                >
-                  <path
-                    d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"
-                  />
-                </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-envelope" viewBox="0 0 16 16">
+              <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z"/>
+            </svg>
+
                 <p>taller@gmail.com</p>
 
               </a>
@@ -398,10 +418,14 @@
 
     <!-- =================== FOOTER =================== -->
     <footer>
+      <div class="footer-texto">
       <p>
-        &copy; 2025 Amanita Estudio · Espacio creativo en Núñez · Hecho con amor
-        🍄
-      </p>
+        &copy; 2025 Amanita Estudio </p>
+        <p class="puntito">·</p>
+        <p>Espacio creativo en Núñez </p>
+        <p class="puntito">·</p>
+        <p>Hecho con amor 🍄</p>
+      </div>
       <p>
         Seguinos en
         <a

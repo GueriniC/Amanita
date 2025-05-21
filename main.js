@@ -44,5 +44,24 @@ document.addEventListener('DOMContentLoaded', () => {
     .catch(err => console.error('Error cargando modales:', err));
 });
 
+//menu hamb
+const nav = document.querySelector('.nav--principal');
+const toggle = document.querySelector('.nav-toggle');
 
+// Toggle al hacer clic en el botón
+toggle.addEventListener('click', (e) => {
+  e.stopPropagation(); // Evita que el click se propague y lo cierre instantáneamente
+  const isOpen = nav.classList.toggle('open');
+  toggle.setAttribute('aria-expanded', isOpen);
+});
 
+// Cierra el menú si hacés clic fuera de él
+document.addEventListener('click', (e) => {
+  if (
+    nav.classList.contains('open') &&
+    !nav.contains(e.target)
+  ) {
+    nav.classList.remove('open');
+    toggle.setAttribute('aria-expanded', 'false');
+  }
+});
