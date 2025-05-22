@@ -44,6 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
     .catch(err => console.error('Error cargando modales:', err));
 });
 
+
 //menu hamb
 const nav = document.querySelector('.nav--principal');
 const toggle = document.querySelector('.nav-toggle');
