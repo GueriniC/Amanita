@@ -873,3 +873,10 @@ footer {
     }
   }
 }
+.boxes {
+  display: none;
+  .box{
+  width: 50px; height: 50px;
+
+  }
+}
