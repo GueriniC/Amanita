@@ -1,6 +1,4 @@
-// main.js
-
-// Función que engancha eventos de abrir/cerrar modal
+// Inicia los listeners de los modales
 function initModalListeners() {
   // Abrir modal
   document.querySelectorAll('.info-btn').forEach(btn => {
@@ -11,7 +9,7 @@ function initModalListeners() {
     });
   });
 
-  // Cerrar modal con “×”
+  // Cerrar modal con la "×"
   document.querySelectorAll('.modal-close').forEach(btn => {
     btn.addEventListener('click', () => {
       const modal = btn.closest('.modal');
@@ -20,7 +18,7 @@ function initModalListeners() {
     });
   });
 
-  // Cerrar al clickear fuera del contenido
+  // Cerrar modal al hacer clic fuera del contenido
   document.querySelectorAll('.modal').forEach(modal => {
     modal.addEventListener('click', e => {
       if (e.target === modal) {
@@ -29,21 +27,71 @@ function initModalListeners() {
       }
     });
   });
+
+  // Cerrar modal al clickear "Contactanos"
+  document.querySelectorAll('.btn-a-contacto').forEach(btn => {
+    btn.addEventListener('click', e => {
+      e.preventDefault();
+      const modal = btn.closest('.modal');
+      modal.classList.remove('active');
+      modal.setAttribute('aria-hidden', 'true');
+
+      // Scroll al formulario
+      setTimeout(() => {
+        const destino = document.querySelector('#contacto');
+        if (destino) {
+          destino.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 300);
+    });
+  });
 }
 
-// Al cargar la página, traemos los modales y luego inicializamos listeners
+// Carrusel funcional dentro de modal
+function initCarrusel() {
+
+  const carrusel = document.querySelector('.carrusel-imagenes');
+  if (!carrusel) {
+    return;
+  }
+
+  const imagenes = carrusel.querySelectorAll('img');
+
+  let index = 0;
+
+  const prevBtn = document.querySelector('.carrusel-btn.prev');
+  const nextBtn = document.querySelector('.carrusel-btn.next');
+
+  if (!prevBtn || !nextBtn) {
+    return;
+  }
+
+  function updateCarrusel() {
+    carrusel.style.transform = `translateX(-${index * 100}%)`;
+  }
+
+  prevBtn.addEventListener('click', () => {
+    index = (index - 1 + imagenes.length) % imagenes.length;
+    updateCarrusel();
+  });
+
+  nextBtn.addEventListener('click', () => {
+    index = (index + 1) % imagenes.length;
+    updateCarrusel();
+  });
+}
+
+// Cargar modales y ejecutar listeners y carrusel
 document.addEventListener('DOMContentLoaded', () => {
   fetch('modals.html')
     .then(res => res.text())
     .then(html => {
-      // Inyecta los modales al final del <body>
       document.body.insertAdjacentHTML('beforeend', html);
-      // Ahora que ya están en el DOM, enganchá los botones
       initModalListeners();
+      initCarrusel();
     })
     .catch(err => console.error('Error cargando modales:', err));
 });
-
 
 //menu hamb
 const nav = document.querySelector('.nav--principal');
@@ -66,3 +114,5 @@ document.addEventListener('click', (e) => {
     toggle.setAttribute('aria-expanded', 'false');
   }
 });
+
+
