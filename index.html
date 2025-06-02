@@ -48,34 +48,8 @@
       <div class="box" style="background: var(--color-gris-oscuro)"></div>
     </div>
 
-    <!-- =================== HEADER =================== -->
-  <header>
-    <nav aria-label="Navegación principal" class="nav--principal">
-      <!-- Botón hamburger -->
-      <button 
-        class="nav-toggle" 
-        aria-label="Abrir menú" 
-        aria-expanded="false"
-      >
-        <!-- Aquí un SVG o una imagen -->
-        <svg width="24" height="24" viewBox="0 0 24 24">
-          <path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2"/>
-        </svg>
-      </button>
+   <div id="header-placeholder"></div>
 
-      <ul class="nav-list">
-        <li><a href="#inicio">Inicio</a></li>
-        <li><a href="#talleres">Talleres</a></li>
-        <li><a href="#valores">Nuestros valores</a></li>
-        <li><a href="#contacto">Contacto</a></li>
-      </ul>
-      <div class="marca">
-        <span class="amanita">Amanita </span>
-        <span class="estudio">Estudio</span>
-      </div>
-
-    </nav>
-  </header>
 
 
     <!-- =================== MAIN =================== -->
@@ -146,91 +120,96 @@
       <!-- ---------- Talleres ---------- -->
       <section id="talleres" aria-labelledby="titulo-talleres">
       <h2 id="titulo-talleres">Talleres creativos y experienciales</h2>
-      <div>
-        <!-- Arte para infancias -->
-        <article class="taller" aria-labelledby="taller-ninos">
-          <div class="imagen">
-            <img src="images/taller-ninos.svg" alt="Imagen demostrativa de taller para infancias" />
-            <button class="btn info-btn-opacidad" data-modal-target="#modal-talleres-ninos">Ver más</button>
 
-          </div>
-          <div class="texto">
-            <h3 id="taller-ninos"><i class="ph ph-pinwheel"></i> Arte para infancias</h3>
-            <p><strong>Días:</strong> Martes y jueves, 17 a 18:30 hs</p>
-            <p>Exploración de colores, texturas y formas para infancias curiosas.</p>
+      <div class="talleres-layout">
 
-            <button class="btn info-btn" data-modal-target="#modal-talleres-ninos">Ver más</button>
-          </div>
+        <div class="talleres-contenido">
+          <!-- Arte para infancias -->
+          <article class="taller" aria-labelledby="taller-ninos">
+            <div class="imagen">
+              <img src="images/taller-ninos.svg" alt="Imagen demostrativa de taller para infancias" />
+              <button class="btn info-btn  info-btn-opacidad" data-modal-target="#modal-talleres-ninos">Ver más</button>
 
-        </article>
+            </div>
+            <div class="texto">
+              <h3 id="taller-ninos"><i class="ph ph-pinwheel"></i> Arte para infancias</h3>
+              <p><strong>Días:</strong> Martes y jueves, 17 a 18:30 hs</p>
+              <p>Exploración de colores, texturas y formas para infancias curiosas.</p>
+              <button class="btn info-btn" data-modal-target="#modal-talleres-ninos">Ver más</button>
+            </div>
 
-        <!-- Arte y vino -->
-        <article class="taller" aria-labelledby="taller-vino">
-          <div class="imagen">
-            <img src="images/taller-vino.svg" alt="Imagen demostrativa de taller arte y vino" />
-            <button class="btn info-btn-opacidad" data-modal-target="#modal-talleres-vino">Ver más</button>
+          </article>
 
-          </div>
-          <div class="texto">
-            <h3 id="taller-vino"><i class="ph ph-wine"></i> Arte y vino</h3>
-            <p><strong>Día:</strong> Viernes, 19 a 21 hs</p>
-            <p>Pintura libre con copa y picada en mano</p>
- 
-            <button class="btn info-btn" data-modal-target="#modal-talleres-vino">Ver más</button>
-          </div>
+          <!-- Arte y vino -->
+          <article class="taller" aria-labelledby="taller-vino">
+            <div class="imagen">
+              <img src="images/taller-vino.svg" alt="Imagen demostrativa de taller arte y vino" />
+              <button class="btn info-btn  info-btn-opacidad" data-modal-target="#modal-talleres-vino">Ver más</button>
 
-        </article>
+            </div>
+            <div class="texto">
+              <h3 id="taller-vino"><i class="ph ph-wine"></i> Arte y vino</h3>
+              <p><strong>Día:</strong> Viernes, 19 a 21 hs</p>
+              <p>Pintura libre con copa y picada en mano</p>
+  
+              <button class="btn info-btn" data-modal-target="#modal-talleres-vino">Ver más</button>
+            </div>
 
-        <!-- Arte y merienda -->
-        <article class="taller" aria-labelledby="taller-merienda">
-          <div class="imagen">
-            <img src="images/taller-merienda.svg" alt="Imagen merienda y arte" />
-            <button class="btn info-btn-opacidad" data-modal-target="#modal-talleres-merienda">Ver más</button>
-          </div>
-          <div class="texto">
-            <h3 id="taller-merienda"><i class="ph ph-cookie"></i> Arte y merienda</h3>
-            <p><strong>Día:</strong> Sábados, 16 a 18 hs</p>
-            <p>Pintar, compartir y saborear. Ideal con amigos.</p>
+          </article>
 
-            <button class="btn info-btn" data-modal-target="#modal-talleres-merienda">Ver más</button>
-          </div>
+          <!-- Arte y merienda -->
+          <article class="taller" aria-labelledby="taller-merienda">
+            <div class="imagen">
+              <img src="images/taller-merienda.svg" alt="Imagen merienda y arte" />
+              <button class="btn info-btn info-btn-opacidad" data-modal-target="#modal-talleres-merienda">Ver más</button>
+            </div>
+            <div class="texto">
+              <h3 id="taller-merienda"><i class="ph ph-cookie"></i> Arte y merienda</h3>
+              <p><strong>Día:</strong> Sábados, 16 a 18 hs</p>
+              <p>Pintar, compartir y saborear. Ideal con amigos.</p>
 
-        </article>
+              <button class="btn info-btn" data-modal-target="#modal-talleres-merienda">Ver más</button>
+            </div>
 
-        <!-- Yoga -->
-        <article class="taller" aria-labelledby="taller-yoga">
-          <div class="imagen">
-            <img src="images/taller-yoga.svg" alt="Imagen taller yoga" />
-            <button class="btn info-btn-opacidad" data-modal-target="#modal-talleres-yoga">Ver más</button>
+          </article>
 
-          </div>
-          <div class="texto">
-            <h3 id="taller-yoga"><i class="ph ph-peace"></i> Yoga</h3>
-            <p><strong>Días:</strong> Lunes y miércoles, 9 a 10 hs</p>
-            <p>Comenzá la semana respirando, conectando con el cuerpo y la calma.</p>
+          <!-- Yoga -->
+          <article class="taller" aria-labelledby="taller-yoga">
+            <div class="imagen">
+              <img src="images/taller-yoga.svg" alt="Imagen taller yoga" />
+              <button class="btn info-btn  info-btn-opacidad" data-modal-target="#modal-talleres-yoga">Ver más</button>
 
-            <button class="btn info-btn" data-modal-target="#modal-talleres-yoga">Ver más</button>
-          </div>
+            </div>
+            <div class="texto">
+              <h3 id="taller-yoga"><i class="ph ph-peace"></i> Yoga</h3>
+              <p><strong>Días:</strong> Lunes y miércoles, 9 a 10 hs</p>
+              <p>Comenzá la semana respirando, conectando con el cuerpo y la calma.</p>
 
-        </article>
+              <button class="btn info-btn" data-modal-target="#modal-talleres-yoga">Ver más</button>
+            </div>
 
-        <!-- Talleres rotativos -->
-        <article class="taller" aria-labelledby="taller-rotativos">
-          <div class="imagen">
-            <img src="images/taller-rotativo.svg" alt="Imagen talleres rotativos" />
-            <button class="btn info-btn-opacidad" data-modal-target="#modal-talleres-rotativos">Ver más</button>
+          </article>
 
-          </div>
-          <div class="texto">
-            <h3 id="taller-rotativos"><i class="ph ph-spiral"></i> Talleres rotativos</h3>
-            <p>Cada mes nuevas propuestas: bordado, escritura, cocina, cerámica y más.</p>
-            <p>Estate atento a todas las novedades.</p>
+          <!-- Talleres rotativos -->
+          <article class="taller" aria-labelledby="taller-rotativos">
+            <div class="imagen">
+              <img src="images/taller-rotativo.svg" alt="Imagen talleres rotativos" />
+              <button class="btn info-btn  info-btn-opacidad" data-modal-target="#modal-talleres-rotativos">Ver más</button>
 
-            <button class="btn info-btn" data-modal-target="#modal-talleres-rotativos">Ver más</button>
+            </div>
+            <div class="texto">
+              <h3 id="taller-rotativos"><i class="ph ph-spiral"></i> Talleres rotativos</h3>
+              <p>Cada mes nuevas propuestas: bordado, escritura, cocina, cerámica y más.</p>
+              <p>Estate atento a todas las novedades.</p>
 
-          </div>
+              <button class="btn info-btn" data-modal-target="#modal-talleres-rotativos">Ver más</button>
 
-        </article>
+            </div>
+
+          </article>
+        </div>
+        <div class="modales-container"></div>
+
 
         
       </div>
@@ -343,6 +322,16 @@
                 <span class="checkmark"></span>
                 Me gustaría proponer un taller
               </label>
+            </div>
+            <div>
+              <label class="custom-checkbox">
+                <input type="checkbox" id="aceptar-newsletter" name="aceptar-newsletter" />
+                <span class="checkmark"></span>
+                Quiero recibir novedades por mail sobre próximos talleres y actividades
+              </label>
+              <p style="font-size: 0.9em; margin-left: 28px; color: #666;">
+                (No te vamos a enviar spam, solo info linda e inspiradora 😉)
+              </p>
             </div>
 
 
