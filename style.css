@@ -473,8 +473,8 @@ header {
     .talleres-contenido {
     display: grid;
     margin: 0rem 2rem;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(225px, 1fr));
+    gap: 2rem;
     justify-content: space-around;
     article {
       display: flex;
@@ -760,6 +760,9 @@ footer {
           display: flex;
           align-items: center;
           color: var(--color-secundario-oscuro);
+          font-family: var(--fuente-distinta);
+          font-size: var(--tamano-fuente-h3);
+          font-weight: bold;
           .ph {
             margin-right: 0.5rem;
           }
@@ -768,9 +771,6 @@ footer {
       .texto {
         .talleres-intro{
           color: var(--color-secundario-oscuro);
-          font-family: var(--fuente-distinta);
-          font-size: var(--tamano-fuente-h3);
-          font-weight: bold;
           line-height: normal;
         }
         li {
@@ -1094,6 +1094,55 @@ footer {
 
 
 
+
+
+
+
+
+/*VARIABLES*/
+
+.proximos-eventos {
+  background: var(--color-secundario-claro);
+  padding: 2rem 2.5rem 2rem 1.5rem;
+  border-left: 4px solid #db7093;
+  position: fixed;
+  bottom: -100%;
+  right: 0;
+  min-width: 350px;
+  font-size: var(--tamano-fuente-pequena);
+  z-index: 1000;
+  box-shadow: var(--sombra-media);
+  cursor: pointer;
+  opacity: 0;
+  transition: bottom 0.6s ease, opacity 0.6s ease;
+  border-radius: var(--radio-borde) var(--radio-borde) 0px 0px;
+  &.visible {
+    bottom: 0.5rem;
+    opacity: 1;
+  }
+  p{
+    font-weight: bolder;
+    font-family: var(--fuente-distinta);
+    font-size: var(--tamano-fuente-h3);
+  }
+  ul {
+    margin: 0;
+    padding-left: 1.2em;
+  }
+  .cerrar-popup {
+    position: absolute;
+    top: 6px;
+    right: 8px;
+    font-size: 1.2rem;
+    background: none;
+    border: none;
+    color: var(--color-secundario-oscuro-opacidad);
+    cursor: pointer;
+    &:hover {
+    color: var(--color-secundario-oscuro);
+    }
+  }
+}
 
 
 

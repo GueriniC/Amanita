@@ -140,6 +140,22 @@
 
           </article>
 
+          <!-- Arte para adolescentes -->
+          <article class="taller" aria-labelledby="taller-adolescentes">
+            <div class="imagen">
+              <img src="images/taller-ninos.svg" alt="Imagen demostrativa de taller para infancias" />
+              <button class="btn info-btn  info-btn-opacidad" data-modal-target="#modal-talleres-adolescentes">Ver más</button>
+
+            </div>
+            <div class="texto">
+              <h3 id="taller-ninos"><i class="ph ph-pinwheel"></i> Arte para adolescentes</h3>
+              <p><strong>Días:</strong> Martes y jueves, 17 a 18:30 hs</p>
+              <p>Exploración de colores, texturas y formas para infancias curiosas.</p>
+              <button class="btn info-btn" data-modal-target="#modal-talleres-ninos">Ver más</button>
+            </div>
+
+          </article>
+
           <!-- Arte y vino -->
           <article class="taller" aria-labelledby="taller-vino">
             <div class="imagen">
@@ -149,8 +165,10 @@
             </div>
             <div class="texto">
               <h3 id="taller-vino"><i class="ph ph-wine"></i> Arte y vino</h3>
-              <p><strong>Día:</strong> Viernes, 19 a 21 hs</p>
-              <p>Pintura libre con copa y picada en mano</p>
+
+              <p><strong>Día:</strong> <span data-evento="arte-y-vino-card"></span></p>
+
+              <p>Descubrí todas nuestras propuestas artísticas con copa en mano</p>
   
               <button class="btn info-btn" data-modal-target="#modal-talleres-vino">Ver más</button>
             </div>
@@ -165,8 +183,9 @@
             </div>
             <div class="texto">
               <h3 id="taller-merienda"><i class="ph ph-cookie"></i> Arte y merienda</h3>
-              <p><strong>Día:</strong> Sábados, 16 a 18 hs</p>
-              <p>Pintar, compartir y saborear. Ideal con amigos.</p>
+              <p><strong>Día:</strong> <span data-evento="arte-y-merienda-card"></span></p>
+
+              <p> Comer algo rico y pintar</p>
 
               <button class="btn info-btn" data-modal-target="#modal-talleres-merienda">Ver más</button>
             </div>
@@ -201,6 +220,8 @@
               <h3 id="taller-rotativos"><i class="ph ph-spiral"></i> Talleres rotativos</h3>
               <p>Cada mes nuevas propuestas: bordado, escritura, cocina, cerámica y más.</p>
               <p>Estate atento a todas las novedades.</p>
+              <p><strong>Día:</strong> <span data-evento="taller-rotativos-card"></span></p>
+
 
               <button class="btn info-btn" data-modal-target="#modal-talleres-rotativos">Ver más</button>
 
@@ -470,6 +491,8 @@
     </footer>
 
     <script src="scripts/main.js"></script>
+    <script src="scripts/eventos.js"></script>
+
     
   </body>
 </html>

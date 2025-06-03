@@ -27,14 +27,21 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
-  // MODALES
+  // MODALES (solo una vez)
   fetch('pages/modals.html')
     .then(res => res.text())
     .then(html => {
       if (!modalesContainer) return;
       modalesContainer.insertAdjacentHTML('beforeend', html);
       initModalListeners();
+      if (typeof aplicarFechas === "function") aplicarFechas(); // 👈 ejecutamos la función de eventos.js
     });
+    aviso.addEventListener("click", () => {
+  const seccion = document.querySelector("#talleres");
+  if (seccion) {
+    seccion.scrollIntoView({ behavior: "smooth" });
+  }
+});
 });
 
 function initModalListeners() {
@@ -52,11 +59,9 @@ function initModalListeners() {
       });
 
       if (modal) {
-        // Mostrar el contenedor antes de animar
         modalesContainer.classList.add('modal-abierto');
         if (talleresContenido) talleresContenido.style.width = '50%';
 
-        // Usar requestAnimationFrame para que el browser tenga tiempo de aplicar el estilo antes de abrir
         requestAnimationFrame(() => {
           modal.classList.add('open');
           modal.setAttribute('aria-hidden', 'false');
@@ -76,7 +81,6 @@ function initModalListeners() {
     });
   });
 
-  // Click fuera del modal
   document.addEventListener('click', (e) => {
     if (e.target.closest('[data-modal-target]')) return;
 
@@ -90,7 +94,6 @@ function initModalListeners() {
     });
   });
 
-  // ESC
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
       document.querySelectorAll('.modal.open').forEach(modal => {
@@ -101,12 +104,12 @@ function initModalListeners() {
     }
   });
 
-  // Limpieza inicial
   document.querySelectorAll('.modal').forEach(modal => {
     modal.classList.remove('open');
     modal.setAttribute('aria-hidden', 'true');
   });
-  cerrarContenedorModal(true); // true para no animar el cierre inicial
+
+  cerrarContenedorModal(true);
 }
 
 function cerrarContenedorModal(sinTransicion = false) {
