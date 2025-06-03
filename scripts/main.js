@@ -36,12 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
       initModalListeners();
       if (typeof aplicarFechas === "function") aplicarFechas(); // 👈 ejecutamos la función de eventos.js
     });
-    aviso.addEventListener("click", () => {
-  const seccion = document.querySelector("#talleres");
-  if (seccion) {
-    seccion.scrollIntoView({ behavior: "smooth" });
-  }
-});
+    
 });
 
 function initModalListeners() {
