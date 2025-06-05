@@ -1,7 +1,7 @@
 window.eventos = {
   "arte-y-vino": {
     visible: true,
-    descripcion: "Totebag - 9 de julio, 15 a 19 hs"
+    descripcion: "Totebag - 9 de julio - 15 a 19 hs"
   },
   "arte-y-merienda": {
     visible: false,

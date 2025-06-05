@@ -123,6 +123,7 @@ html {
   h3 {
     margin-bottom: 15px;
   }
+  
       span {
         font-weight: bold;
       }
@@ -981,11 +982,15 @@ footer {
   }
   #talleres {
     margin: auto;
-    > div {
+    .talleres-layout {
       width: 90vw;
       margin: auto;
       display: block;
       padding: 0px;
+      .talleres-contenido {
+        display: block;
+        margin: 0px;
+      }
       .taller {
         display: flex;
         flex-direction: row;
@@ -1008,8 +1013,10 @@ footer {
           padding: 15px;
           position: relative;
           button {
-            margin: 1rem auto;
-            width: 50%;
+            margin: 1rem;
+            top: 0;
+            bottom:auto;
+            left: auto;
           } 
         }
       }
@@ -1026,7 +1033,7 @@ footer {
   }
 }
 
-@media (max-width: 450px) {
+@media (max-width: 600px) {
   #contacto {
     .rrss > div {
       margin-bottom: 1rem !important;
@@ -1146,3 +1153,47 @@ footer {
 
 
 
+
+
+/* 1) Estado normal ─ define la transición */
+.hovering-1,
+.btn,
+.hovering-hijo > article,
+.hovering-hijo > div,
+.proximos-eventos{
+  transition: transform 0.15s ease-out, box-shadow 0.25s ease-out;
+}
+
+/* 2) Estado interactivo ─ aplica el movimiento y la sombra */
+.hovering-1:hover,
+.hovering-1:focus-visible,
+.hovering-hijo > article:hover,
+.hovering-hijo > article:focus-visible,
+.hovering-element svg
+ {
+  transform: translateY(-0rem) scale(1.01);   
+  box-shadow: var(--sombra-suave);  
+}
+
+.btn:hover,
+.hovering-hijo > div:hover,
+.hovering-hijo > div:focus-visible,
+.proximos-eventos:hover {
+  transform: translateY(-0rem) scale(1.05);   
+  box-shadow: var(--sombra-suave);
+}
+
+/* 3) Si un elemento tiene .act, anulá el efecto */
+.hovering-1.act:hover,
+.hovering-1.act:focus-visible {
+  transform: none;
+  box-shadow: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .hovering-1,
+  .hovering-1:hover,
+  .hovering-1:focus-visible {
+    transition: none;
+    transform: none;
+  }
+}
