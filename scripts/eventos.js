@@ -1,7 +1,8 @@
+
 window.eventos = {
   "arte-y-vino": {
     visible: true,
-    descripcion: "Totebag - 9 de julio - 15 a 19 hs"
+    descripcion: "Totebag - 27 de julio - 19.30 a 21.30 hs"
   },
   "arte-y-merienda": {
     visible: false,
@@ -13,9 +14,12 @@ window.eventos = {
   }
 };
 
+
+
 function aplicarFechas() {
   const eventos = window.eventos;
 
+  // 1) Actualizo las tarjetas y los modales (si existen) con cada fecha:
   for (const key in eventos) {
     const { visible, descripcion } = eventos[key];
 
@@ -34,14 +38,18 @@ function aplicarFechas() {
     }
   }
 
+  // 2) Construyo la lista de próximos eventos visibles
   const lista = Object.entries(eventos)
     .filter(([_, data]) => data.visible)
     .map(([key, data]) => {
-      const nombre = key.replaceAll("-", " ").replace(/\b\w/g, l => l.toUpperCase());
+      const nombre = key
+        .replaceAll("-", " ")
+        .replace(/\b\w/g, l => l.toUpperCase());
       return `<li><strong>${nombre}</strong>: ${data.descripcion}</li>`;
     })
     .join("");
 
+  // 3) Si hay al menos uno visible y no existe ya el popup, lo creo
   if (lista && !document.querySelector(".proximos-eventos")) {
     const aviso = document.createElement("div");
     aviso.className = "proximos-eventos";
@@ -52,12 +60,12 @@ function aplicarFechas() {
     `;
     document.body.prepend(aviso);
 
-    // Mostrar con animación
+    // 4) Animación de “fade-in + slide-down” al agregar .visible (100 ms después)
     setTimeout(() => {
       aviso.classList.add("visible");
     }, 100);
 
-    // Click en todo el bloque te lleva a #talleres
+    // 5) Al hacer clic en cualquier parte del aviso, hago scroll a "#talleres"
     aviso.addEventListener("click", () => {
       const seccion = document.querySelector("#talleres");
       if (seccion) {
@@ -65,14 +73,29 @@ function aplicarFechas() {
       }
     });
 
-    // Botón cerrar
+    // 6) Botón “×” para cerrar el popup
     const btnCerrar = aviso.querySelector(".cerrar-popup");
     btnCerrar.addEventListener("click", (e) => {
       e.stopPropagation();
       aviso.classList.remove("visible");
       setTimeout(() => aviso.remove(), 600);
     });
+
+    // 7) Cada 50 s agrego la clase “saltito” para animar un pequeño bounce
+    setInterval(() => {
+      aviso.classList.add("saltito");
+      setTimeout(() => aviso.classList.remove("saltito"), 600);
+    }, 10000);
   }
 }
 
-document.addEventListener("DOMContentLoaded", aplicarFechas);
+// 8) Programo la ejecución de aplicarFechas() 30 segundos después de DOMContentLoaded
+document.addEventListener("DOMContentLoaded", () => {
+  // Si hubiera algún popup viejo, lo remuevo antes de todo:
+  document.querySelectorAll(".proximos-eventos").forEach(el => el.remove());
+
+  // Espero 30 000 ms (30 segundos) y luego llamo a aplicarFechas()
+  setTimeout(() => {
+    aplicarFechas();
+  }, 2000);
+});
